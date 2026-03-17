@@ -1,0 +1,4 @@
+pynput
+vgamepad
+PyQt6
+pyinstaller
