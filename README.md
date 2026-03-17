@@ -145,7 +145,8 @@ quitKey = Key.ctrl_r # Which key will stop the program
   3. Some games may need Steam Input configured
 
 ## Plan
-
+- Refactor Code
+- Create Better GUI
 - Using an OpenXR library from https://github.com/KhronosGroup/OpenXR-SDK to directly control the game.
 - Remove ViGEmBus driver in future release
 - Support for horizontal (X-axis) movement
