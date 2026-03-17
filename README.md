@@ -127,8 +127,16 @@ quitKey = Key.ctrl_r # Which key will stop the program
 ### Mouse cursor is off-screen
 - **Solution**: Edit line 98 in `treadmill.py` to adjust the reset position
 
-### Antivirus blocks the .exe file
-- **Solution**: This is common with PyInstaller executables. Add an exception for `Maratron.exe` in Windows Defender
+### Antivirus blocks the .exe file (False Positive)
+- **Why**: PyInstaller executables are commonly flagged as false positives (especially Trojan:Win32/Wacatac.B!ml) because:
+  - They self-extract to temp directories at runtime
+  - They bundle Python + libraries in a way that looks like malware packers
+  - The .exe is unsigned
+- **Solution**:
+  1. Add an exclusion in Windows Defender: `Settings > Virus & threat protection > Exclusions`
+  2. Verify safety: Upload to VirusTotal.com (most scanners will show clean)
+  3. Build from source yourself using the instructions above
+  4. Submit false positive report to Microsoft: https://www.microsoft.com/wdsi/filesubmission
 
 ### Controller not detected in games
 - **Solution**:
